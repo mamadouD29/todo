@@ -7,7 +7,8 @@ authMiddleware = require("../middleware/authMiddleware"),
 //   const {} noteListController = require("../controllers/noteListController"),
 const {
     get_noteList,
-    get_details
+    get_details,
+    get_detailPage
 } = require("../controllers/noteListController"),
 
 
@@ -33,6 +34,8 @@ router.get("/create", authMiddleware, createController.get_create);
 router.post("/create", authMiddleware, createController.post_note);
 
 router.get("/list", authMiddleware, get_noteList);
-router.get("/list", authMiddleware, get_details);
+router.get("/list/:id", authMiddleware, get_details);
+router.get("/list/details", authMiddleware, get_details);
+router.get("/list/details", authMiddleware, get_detailPage);
 
 module.exports = router;

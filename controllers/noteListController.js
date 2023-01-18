@@ -10,32 +10,25 @@ const get_noteList = async (req, res) => {
     });
 }
 
-// const notes = await Note.find();
-// res.render("list", {
-//     notes
-// })
-
-
-const get_details = async (req, res) => {
+const get_details = (req, res) => {
     const parId = req.params.id;
 
-    const notes = await Note.findById(req.params.id).populate("userid");
-    // console.log(notes);
-    // console.log(notes.userid.username);
-    res.render("details", {
-        notes
-    })
 
-    // Note.findById(parId)
-    //     .then(result => {
-    //         res.render("details", {
-    //             notes: result
-    //         })
-    //     })
-    //     .catch(error => console.log(err));
+    Note.findById(parId)
+        .then(result => {
+            res.render("details", {
+                notes: result
+            })
+        })
+        .catch(error => console.log(err));
+}
+
+const get_detailPage = (req, res) => {
+    res.render("details");
 }
 
 module.exports = {
     get_noteList,
-    get_details
+    get_details,
+    get_detailPage
 }

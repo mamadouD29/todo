@@ -8,19 +8,20 @@ const express = require('express'),
     flash = require("connect-flash");
 
 const app = express();
-let port = process.env.PORT;
-if (port == null || port == "") {
-    port = 3000;
-}
+let port = process.env.PORT || 3000;
+
 global.loggedIn = null;
 mongoose.set('strictQuery', true);
 
 const uri = "mongodb+srv://Mamadou:Versus22@cluster0.occcwxf.mongodb.net/todo";
 mongoose.connect(uri)
-    .then(result => app.listen(port, () => console.log(`App listening on port ${port}!`)))
-    .catch(err => console.log(err));
+.then(result => console.log("Monggose connected !!"))
+.catch(err => console.log("mongoose has issues!!\n"))
 
+// .then(result => )
+    // .catch(err => console.log(err));
 
+    app.listen(port, () => console.log(`App listening on port ${port}!`))
 
 
 // middleware and template
