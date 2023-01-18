@@ -23,10 +23,7 @@ const UserSchema = new Schema({
         required: [true, "Please provide email"],
         unique: true
     },
-    note: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Note"
-    }
+
 })
 
 UserSchema.pre("save", function (next) {
