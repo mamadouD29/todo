@@ -1,0 +1,177 @@
+:root {
+    --header-bg: rgb(8, 125, 157);
+    --nav-alink-co: rgb(222, 222, 220);
+
+    --log-reg-bg: rgb(20, 178, 144);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    /* overflow-x: hidden; */
+}
+
+header {
+    background: var(--header-bg);
+    /* padding: 0 1em; */
+}
+
+nav ul {
+    padding: 0;
+    display: flex;
+    margin: 0;
+    padding: .5em;
+}
+
+nav ul li:first-child {
+    margin-right: auto;
+}
+
+nav ul li {
+    margin: 1em .5em;
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: var(--nav-alink-co);
+    display: block;
+    transition: all .2s ease-in;
+}
+
+nav ul li a:hover {
+    transition: all .2s ease-in;
+    transform: scale(1.2);
+    text-decoration: none;
+    color: var(--nav-alink-co);
+}
+
+
+main {
+    height: auto;
+}
+
+.m-content {
+    margin-top: 0;
+    background: url(/img/1.jpg) top/cover;
+    color: white;
+    min-height: 100vh;
+    padding-top: 5em;
+
+}
+
+article {
+    height: 10em;
+    width: 100%;
+    text-align: center;
+
+    /* font-size: 1.5em; */
+}
+
+.menu-wrapper,
+.reg-wrapper,
+.login-wrapper {
+    min-height: 100vh;
+    padding: 1em;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background: url(../img/2.jpg) bottom/cover;
+
+}
+
+.menu,
+.reg,
+.login {
+    /* height: 100%; */
+    background: var(--log-reg-bg);
+    width: 100%;
+    padding: 1em;
+
+}
+
+.note-page {
+    padding: 1em;
+    background: url(../img/4.jpg) bottom/cover;
+    min-height: 100vh;
+}
+
+
+.note-detail {
+    /* border: 2px solid black; */
+
+    height: 100%;
+    background: rgb(240, 235, 235);
+    padding: 1em;
+}
+
+.note-detail hgroup {
+    height: auto;
+    text-align: left;
+}
+
+.note-body {
+    text-align: left;
+}
+
+.note-body p {
+    padding: 1em 2em;
+}
+
+
+@media (min-width: 800px) {
+
+
+    hgroup {
+        height: 60%;
+    }
+
+    hgroup h1 {
+        font-size: 4em;
+    }
+
+    .menu-wrapper,
+    .reg-wrapper,
+    .login-wrapper {
+        justify-content: center;
+    }
+
+    .menu,
+    .reg,
+    .login {
+        width: 50%;
+        position: relative;
+        height: auto;
+    }
+
+}
+
+
+
+@media (min-width: 1000px) {
+
+    .menu,
+    .reg,
+    .login {
+        width: 40%;
+        height: 40%;
+        padding: 3em;
+    }
+
+    .note-detail {
+        width: 50%;
+        margin: 1em auto 5em;
+        padding: 2em;
+    }
+
+    .note-body {
+        margin: 3em;
+    }
+
+
+
+
+}

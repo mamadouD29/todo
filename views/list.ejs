@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/head") %>
+
+<body>
+    <div id="page">
+        <%- include("./partials/nav") %>
+        <main>
+            <article>
+                <hgroup>
+                    <h1>LIST</h1>
+                </hgroup>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>snippet</th>
+                            <th>by</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <% if (notes.length > 0 ) { %>
+
+                        <% notes.forEach(note => {%>
+                        <tr>
+
+
+                            <td><a href="/list/<%=note._id %>"><%= note.title %> </a></td>
+
+                            <td><%= note.snippet %></td>
+                            <td><%= note.userid.username %></td>
+                            
+                        </tr>
+
+                        <%  })%>
+
+                        <% } else {%>
+                        <p>There are no note to display</p>
+                        <%}  %>
+                            
+                    </tbody>
+                </table>
+            </article>
+        </main>
+        <%- include("./partials/footer.ejs") %>
+    </div>
+</body>
+
+</html>
