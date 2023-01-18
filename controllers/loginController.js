@@ -7,13 +7,13 @@ const get_login = async (req, res) => {
 }
 
 
-const loginUser = (req, res) => {
+const loginUser = async (req, res) => {
     const {
         username,
         password
     } = req.body;
 
-    User.findOne({
+    await User.findOne({
         username: username
     }, (err, user) => {
         if (user) {

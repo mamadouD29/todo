@@ -20,8 +20,8 @@ const get_details = async (req, res) => {
     const parId = req.params.id;
 
     const notes = await Note.findById(req.params.id).populate("userid");
-    console.log(notes);
-    console.log(notes.userid.username);
+    // console.log(notes);
+    // console.log(notes.userid.username);
     res.render("details", {
         notes
     })
